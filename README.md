@@ -24,7 +24,9 @@ npx create-react-app my-react
 # Start local server
 cd my-react
 npm start
+```
 
-# Start local server with another port
-npm start -- --port 4000
+```sh
+# Move dependencies in package.js and add folders config and scripts
+npm run eject
 ```
