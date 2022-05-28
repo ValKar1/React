@@ -43,7 +43,9 @@ export class App extends React.Component {
 
   render() {
     const { title, name, nameObj } = this.props;
-    return <div title={title}>Hallo {nameObj.prename} {nameObj.lastname} <strong>Countdown = {this.state.counterValue}</strong>
+    return <div>
+            <div>-------- render(), props, state & componentDidMount, livecycle, children --------</div>
+            <div title={title}>Hallo {nameObj.prename} {nameObj.lastname} <strong>Countdown = {this.state.counterValue}</strong></div>
             <div>{this.props.children}</div>
             <div>{this.props.coolKid}</div>
            </div>
