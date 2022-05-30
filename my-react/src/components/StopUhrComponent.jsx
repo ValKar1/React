@@ -58,6 +58,7 @@ export function StopUhrComponent(props) {
   }
 
   return <div>
+    <h3>Meine Stoppuhr</h3>
     <div>{ formatTime(timeState) }</div>
     <button onClick={ start }>Start</button>
     <button onClick={ pause }>Pause</button>

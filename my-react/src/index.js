@@ -21,12 +21,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // JSX
 root.render(
   <React.StrictMode>
+    <p>
+      <h3>4. Class Components</h3>
+      <strong>( render(), props, state & componentDidMount, livecycle, children )</strong>
+    </p>
     <App title="test" name="linkedIn" nameObj={nameObj} coolKid={<p>Cool!</p>}>
       <p>Die Learning Cat ist eine wissbegierige Katze</p>
     </App>
-    <p>-------- EEE --------</p>
+    <p>--------------------------------------------------</p>
+    <p>
+      <h3>5. Function Components</h3>
+      <strong>( TODO........................ )</strong>
+    </p>
     <FunctionalComponent number="1)" />
     <StopUhrComponent />
     <StopUhrComponent2 />
+    <p>--------------------------------------------------</p>
   </React.StrictMode>
 );

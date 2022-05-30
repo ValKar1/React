@@ -87,7 +87,7 @@ export function StopUhrComponent2() {
 
   return (
     <div>
-      <h1>Stoppuhr</h1>
+      <h3>Lösung Stoppuhr</h3>
       <p>{formatTime(hours, minutes, seconds, hundreds)}</p>
       <div>
         <button type="button" onClick={startClicked}>
