@@ -3,8 +3,8 @@ import React, {useState, useEffect, useCallback, useMemo} from "react";
 export function FunctionalComponent(props) {
 
   // Hooks Regeln
-  // 1) Hooks fangen immer mir use an , z.B: useContext oder useState
-  // 2) Hooks nur auf Top-Level (nicht in Loops, nicht in ifs)
+  // 1) Hooks fangen immer mit use an, z.B: useContext oder useState
+  // 2) Hooks nur auf Top-Level (nicht in Loops, nicht in if's)
   // 3) Hooks nur in React Function Components oder anderen Hooks
 
   // Hooks 1.
@@ -18,11 +18,11 @@ export function FunctionalComponent(props) {
   // });
 
   const [countdown, setCountdown] = useState(10);
-  // // useEffect 1. (entspricht dem componentDIdMount mit dem leerem array)
+  // // useEffect 1. (entspricht dem componentDidMount mit dem leerem array)
   // useEffect(() => {
-  //   // componentDIdMount
+  //   // componentDidMount
   //   const ref = setInterval(() => {
-  //     setCountdown((oldCountdownValue) => {
+  //     setCountdown((oldCountdownValue) => { // Set value with function
   //       if (oldCountdownValue > 0) {
   //         return oldCountdownValue - 1;
   //       }
@@ -34,18 +34,18 @@ export function FunctionalComponent(props) {
   //   return () => {
   //     window.clearInterval(ref)
   //   };
-  // }, []);
+  // }, []); // Bei leerem Array entspricht dem componentDidMount. Weil Array leer ist so regiert man nicht auf updates.
 
   // useEffect 2. (entspricht dem componentDidUpdate)
   // useEffect(() => {
   //   const ref = setTimeout(() => {
   //     if (countdown > 0) {
-  //       setCountdown(countdown - 1);
+  //       setCountdown(countdown - 1); // Set direct value
   //     }
   //   }, 1000);
   //
   //   return () => clearTimeout(ref);
-  // }, [countdown]); // Reagiert auf jede Änderung von countdown
+  // }, [countdown]); // Reagiert auf jede Änderung von countdown (componentDidUpdate)
 
 
   // useEffect 3. (entspricht dem componentDidUpdate)
@@ -54,15 +54,15 @@ export function FunctionalComponent(props) {
     if (countdown > 0) {
       setCountdown(countdown - 1);
     }
-  },[countdown])
+  },[countdown]) // Wird jedes mal neu definiert bei countdown Änderungen
+  // Ohne array wird jedes mal neu definiert bei allen Änderungen
 
-  // useMemo funktion ruft function auf
+  // useMemo funktion ruft function auf (Funktioniert für beliebige Werten z.B markup Beispiel unten, bei Funktionen aber useCallback besser.)
   // const timeoutFunc = useMemo(() => () => {
   //   if (countdown > 0) {
   //     setCountdown(countdown - 1);
   //   }
   // },[countdown])
-
 
   useEffect(() => {
     const ref = setTimeout(timeoutFunc, 1000);

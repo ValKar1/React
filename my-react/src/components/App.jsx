@@ -5,11 +5,11 @@ export class App extends React.Component {
     counterValue: 3
   };
 
-  componentDidMount() {
+  componentDidMount() { // Nutze das anstatt constructor
     console.log('componentDidMount:')
     this.myInterval = setInterval(() => {
       // Modify state only with setState
-      this.setState((state) => {
+      this.setState((state) => { // state über funktion setzen
         if (state.counterValue > 0) {
           return { counterValue: state.counterValue - 1 };
         } else {
@@ -20,7 +20,7 @@ export class App extends React.Component {
 
     // setInterval(() => {
     //   // Modify state only with setState
-    //   this.setState({
+    //   this.setState({  // state direkt setzen
     //     counterValue: Math.max(0, this.state.counterValue -1),
     //   })
     // }, 1000)

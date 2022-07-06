@@ -14,8 +14,8 @@ export function StopUhrComponent(props) {
       }, 10);
       return () => clearTimeout(ref);
     }
-    return () => {};
-  }, [timeState]);
+    return () => {}; // componentWillUnmount
+  }, [timeState]); // componentDidUpdate
 
   const formatTime = (micros) => {
     let hundreds = Math.floor(micros % 60);
