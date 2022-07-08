@@ -1,0 +1,21 @@
+header {
+  position: relative;
+  z-index: 999;
+}
+
+main {
+  position: relative;
+  z-index: 50;
+}
+
+.modal {
+  z-index: 99999;
+  position: fixed;
+  inset: 0;
+  background: #0e5476bb;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  font-size: 200%;
+  color: white;
+}

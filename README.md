@@ -30,3 +30,5 @@ npm start
 # Move dependencies in package.js and add folders config and scripts
 npm run eject
 ```
+
+[LinkedInLearning GitHub](https://github.com/LinkedInLearning/react-esst-3161772)
