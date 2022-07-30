@@ -1,0 +1,29 @@
+.card {
+  background: beige;
+  width: calc(50% - 20px);
+  max-width: 200px;
+  height: 280px;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 7px;
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &Question {
+    display: block;
+    font-size: 26px;
+    padding-top: 15px;
+  }
+
+  &Answer {
+    margin: 0;
+    font-size: 21px;
+    font-style: italic;
+    padding-top: 15px;
+  }
+}
